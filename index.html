@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News Swipe Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>📰 News Swipe Game</h1>
+    <div class="card" id="card">
+      <img id="person-image" src="images/trump.jpg" alt="person">
+      <p id="headline">Trump to meet world leaders at UN summit</p>
+    </div>
+    <div class="buttons">
+      <button onclick="swipe('left')">❌</button>
+      <span id="score">Score: 0</span>
+      <button onclick="swipe('right')">✔️</button>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
