@@ -4,6 +4,7 @@ let score = 0;
 const image = document.getElementById("person-image");
 const headline = document.getElementById("headline");
 const scoreDisplay = document.getElementById("score");
+const card = document.getElementById("card");
 
 function loadCard() {
   const current = newsData[index];
@@ -35,3 +36,20 @@ function swipe(direction) {
 }
 
 loadCard();
+
+// Mobile swipe support
+let startX = 0;
+card.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+});
+
+card.addEventListener("touchend", (e) => {
+  const endX = e.changedTouches[0].clientX;
+  const diffX = endX - startX;
+
+  if (diffX > 50) {
+    swipe("right");
+  } else if (diffX < -50) {
+    swipe("left");
+  }
+});
